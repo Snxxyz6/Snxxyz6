@@ -1,0 +1,27 @@
+import time
+
+# ANSI escape codes für verschiedene Farben
+farben = [
+    '\033[31m',  # Rot
+    '\033[33m',  # Gelb
+    '\033[32m',  # Grün
+    '\033[36m',  # Cyan
+    '\033[34m',  # Blau
+    '\033[35m',  # Magenta
+    '\033[0m'    # Zurücksetzen
+]
+
+index = 0
+
+while True:
+    # Wähle die aktuelle Farbe basierend auf dem Index
+    farbe = farben[index % len(farben)]
+    
+    # Gib "SNXX" in der aktuellen Farbe aus
+    print(farbe + "SNXX" + '\033[0m')  # '\033[0m' setzt die Farbe zurück
+    
+    # Warte 0.01 Sekunden
+    time.sleep(0.01)
+    
+    # Gehe zur nächsten Farbe
+    index += 1
